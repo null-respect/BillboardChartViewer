@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="907.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.dimigo.billboard.BillboardController">
+   <children>
+      <WebView fx:id="webView" layoutX="32.0" layoutY="518.0" prefHeight="340.0" prefWidth="757.0" />
+      <TableView fx:id="musicTableView" cacheShape="false" layoutX="28.0" layoutY="86.0" onMouseClicked="#click" pickOnBounds="false" prefHeight="223.0" prefWidth="750.0" snapToPixel="false">
+        <columns>
+          <TableColumn fx:id="rankColumn" editable="false" onEditStart="#handleYoutubeAction" prefWidth="89.0" resizable="false" text="순위" />
+            <TableColumn fx:id="rank_lastweekColumn" editable="false" minWidth="0.0" prefWidth="57.0" resizable="false" text="지난 순위" />
+          <TableColumn fx:id="songColumn" editable="false" prefWidth="279.0" resizable="false" text="곡명" />
+            <TableColumn fx:id="artistColumn" editable="false" minWidth="0.0" prefWidth="322.0" resizable="false" text="아티스트 " />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="259.0" layoutY="27.0" text="Billboard Hot100">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="616.0" layoutY="58.0" onAction="#handleDate" prefHeight="23.0" prefWidth="162.0" />
+      <Label fx:id="lbSongInfo" layoutX="28.0" layoutY="320.0" prefHeight="18.0" prefWidth="55.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="lbRank" alignment="CENTER" layoutX="14.0" layoutY="357.0" prefHeight="96.0" prefWidth="156.0">
+         <font>
+            <Font size="82.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="artistImage" fitHeight="150.0" fitWidth="150.0" layoutX="172.0" layoutY="344.0" onMouseClicked="#click" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="youtubeSearch" layoutX="645.0" layoutY="480.0" mnemonicParsing="false" onAction="#handleYoutubeAction" text="YouTube에서 검색">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label fx:id="lbSongName" layoutX="344.0" layoutY="363.0" prefHeight="42.0" prefWidth="435.0">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Label fx:id="lbArtist" layoutX="345.0" layoutY="432.0" prefHeight="42.0" prefWidth="429.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="lbRankLastWeek" alignment="CENTER" layoutX="39.0" layoutY="454.0" prefHeight="15.0" prefWidth="106.0" />
+      <Button layoutX="387.0" layoutY="870.0" mnemonicParsing="false" onAction="#handleCloseAction" text="닫기" />
+   </children>
+</AnchorPane>
